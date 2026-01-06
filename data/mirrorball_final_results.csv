@@ -1,0 +1,337 @@
+track_name,album_name,valence,energy,data_type
+Tim McGraw,Taylor Swift,0.425,0.491,ACTUAL
+Picture To Burn,Taylor Swift,0.821,0.877,ACTUAL
+Teardrops On My Guitar,Taylor Swift,0.289,0.417,ACTUAL
+A Place In This World,Taylor Swift,0.428,0.777,ACTUAL
+Cold As You,Taylor Swift,0.261,0.482,ACTUAL
+The Outside,Taylor Swift,0.591,0.805,ACTUAL
+Tied Together With A Smile,Taylor Swift,0.192,0.578,ACTUAL
+Stay Beautiful,Taylor Swift,0.504,0.629,ACTUAL
+Should've Said No,Taylor Swift,0.472,0.777,ACTUAL
+Mary's Song (Oh My My My),Taylor Swift,0.374,0.627,ACTUAL
+Our Song,Taylor Swift,0.539,0.672,ACTUAL
+I'm Only Me When I'm With You,Taylor Swift,0.518,0.934,ACTUAL
+Invisible,Taylor Swift,0.233,0.394,ACTUAL
+A Perfectly Good Heart,Taylor Swift,0.268,0.751,ACTUAL
+Teardrops On My Guitar (Pop Version),Taylor Swift,0.483,0.753,ACTUAL
+Fearless,Fearless,0.467,0.714,ACTUAL
+Fifteen,Fearless,0.214,0.636,ACTUAL
+Love Story,Fearless,0.307,0.736,ACTUAL
+Hey Stephen,Fearless,0.825,0.553,ACTUAL
+White Horse,Fearless,0.195,0.346,ACTUAL
+You Belong With Me,Fearless,0.445,0.771,ACTUAL
+Breathe,Fearless,0.17,0.486,ACTUAL
+Tell Me Why,Fearless,0.513,0.852,ACTUAL
+You're Not Sorry,Fearless,0.281,0.459,ACTUAL
+The Way I Loved You,Fearless,0.379,0.712,ACTUAL
+Forever & Always,Fearless,0.514,0.829,ACTUAL
+The Best Day,Fearless,0.364,0.447,ACTUAL
+Change,Fearless,0.224,0.756,ACTUAL
+Jump Then Fall,Fearless,0.82,0.687,ACTUAL
+Untouchable,Fearless,0.288,0.454,ACTUAL
+Forever & Always (Piano Version),Fearless,0.294,0.16,ACTUAL
+Come In With The Rain,Fearless,0.224,0.475,ACTUAL
+SuperStar,Fearless,0.228,0.531,ACTUAL
+The Other Side Of The Door,Fearless,0.469,0.816,ACTUAL
+Fearless (Taylor's Version),Fearless (Taylor's Version),0.43,0.741,ACTUAL
+Fifteen (Taylor's Version),Fearless (Taylor's Version),0.289,0.646,ACTUAL
+Love Story (Taylor's Version),Fearless (Taylor's Version),0.415,0.792,ACTUAL
+Hey Stephen (Taylor's Version),Fearless (Taylor's Version),0.797,0.571,ACTUAL
+White Horse (Taylor's Version),Fearless (Taylor's Version),0.366,0.517,ACTUAL
+You Belong With Me (Taylor's Version),Fearless (Taylor's Version),0.474,0.773,ACTUAL
+Breathe (Taylor's Version),Fearless (Taylor's Version),0.321,0.626,ACTUAL
+Tell Me Why (Taylor's Version),Fearless (Taylor's Version),0.541,0.909,ACTUAL
+You're Not Sorry (Taylor's Version),Fearless (Taylor's Version),0.241,0.444,ACTUAL
+The Way I Loved You (Taylor's Version),Fearless (Taylor's Version),0.472,0.732,ACTUAL
+Forever & Always (Taylor's Version),Fearless (Taylor's Version),0.673,0.821,ACTUAL
+The Best Day (Taylor's Version),Fearless (Taylor's Version),0.469,0.576,ACTUAL
+Change (Taylor's Version),Fearless (Taylor's Version),0.344,0.815,ACTUAL
+Jump Then Fall (Taylor's Version),Fearless (Taylor's Version),0.624,0.69,ACTUAL
+Untouchable (Taylor's Version),Fearless (Taylor's Version),0.224,0.531,ACTUAL
+Forever & Always (Piano Version) [Taylor's Version],Fearless (Taylor's Version),0.271,0.273,ACTUAL
+Come In With The Rain (Taylor's Version),Fearless (Taylor's Version),0.167,0.564,ACTUAL
+SuperStar (Taylor's Version),Fearless (Taylor's Version),0.171,0.555,ACTUAL
+The Other Side Of The Door (Taylor's Version),Fearless (Taylor's Version),0.629,0.873,ACTUAL
+Today Was A Fairytale (Taylor's Version),Fearless (Taylor's Version),0.328,0.779,ACTUAL
+You All Over Me (Taylor's Version) [From The Vault],Fearless (Taylor's Version),0.44,0.494,ACTUAL
+Mr. Perfectly Fine (Taylor's Version) [From The Vault],Fearless (Taylor's Version),0.714,0.817,ACTUAL
+We Were Happy (Taylor's Version) [From The Vault],Fearless (Taylor's Version),0.13,0.373,ACTUAL
+That's When (Taylor's Version) [From The Vault],Fearless (Taylor's Version),0.508,0.608,ACTUAL
+Don't You (Taylor's Version) [From The Vault],Fearless (Taylor's Version),0.405,0.473,ACTUAL
+Bye Bye Baby (Taylor's Version) [From The Vault],Fearless (Taylor's Version),0.527,0.624,ACTUAL
+Mine,Speak Now,0.658,0.757,ACTUAL
+Sparks Fly,Speak Now,0.374,0.787,ACTUAL
+Back To December,Speak Now,0.286,0.67,ACTUAL
+Speak Now,Speak Now,0.735,0.599,ACTUAL
+Dear John,Speak Now,0.102,0.47,ACTUAL
+Mean,Speak Now,0.789,0.761,ACTUAL
+The Story Of Us,Speak Now,0.683,0.818,ACTUAL
+Never Grow Up,Speak Now,0.554,0.305,ACTUAL
+Enchanted,Speak Now,0.208,0.623,ACTUAL
+Better Than Revenge,Speak Now,0.635,0.917,ACTUAL
+Innocent,Speak Now,0.17,0.608,ACTUAL
+Haunted,Speak Now,0.352,0.95,ACTUAL
+Last Kiss,Speak Now,0.196,0.341,ACTUAL
+Long Live,Speak Now,0.142,0.68,ACTUAL
+Ours,Speak Now,0.238,0.569,ACTUAL
+If This Was A Movie,Speak Now,0.289,0.719,ACTUAL
+Superman,Speak Now,0.559,0.765,ACTUAL
+State Of Grace,Red,0.397,0.825,ACTUAL
+Red,Red,0.641,0.896,ACTUAL
+Treacherous,Red,0.395,0.621,ACTUAL
+I Knew You Were Trouble,Red,0.679,0.469,ACTUAL
+All Too Well,Red,0.337,0.609,ACTUAL
+22,Red,0.668,0.729,ACTUAL
+I Almost Do,Red,0.233,0.481,ACTUAL
+We Are Never Ever Getting Back Together,Red,0.75,0.676,ACTUAL
+Stay Stay Stay,Red,0.928,0.748,ACTUAL
+The Last Time,Red,0.123,0.443,ACTUAL
+Holy Ground,Red,0.648,0.816,ACTUAL
+Sad Beautiful Tragic,Red,0.261,0.34,ACTUAL
+The Lucky One,Red,0.545,0.499,ACTUAL
+Everything Has Changed,Red,0.436,0.458,ACTUAL
+Starlight,Red,0.587,0.777,ACTUAL
+Begin Again,Red,0.323,0.526,ACTUAL
+The Moment I Knew,Red,0.275,0.506,ACTUAL
+Come Back...Be Here,Red,0.217,0.548,ACTUAL
+Girl At Home,Red,0.633,0.59,ACTUAL
+Treacherous (Original Demo Recording),Red,0.519,0.64,ACTUAL
+Red (Original Demo Recording),Red,0.637,0.902,ACTUAL
+State Of Grace (Acoustic Version),Red,0.0682,0.118,ACTUAL
+State Of Grace (Taylor's Version),Red (Taylor's Version),0.328,0.713,ACTUAL
+Red (Taylor's Version),Red (Taylor's Version),0.408,0.777,ACTUAL
+Treacherous (Taylor's Version),Red (Taylor's Version),0.299,0.593,ACTUAL
+I Knew You Were Trouble (Taylor's Version),Red (Taylor's Version),0.767,0.557,ACTUAL
+All Too Well (Taylor's Version),Red (Taylor's Version),0.132,0.528,ACTUAL
+22 (Taylor's Version),Red (Taylor's Version),0.642,0.695,ACTUAL
+I Almost Do (Taylor's Version),Red (Taylor's Version),0.248,0.559,ACTUAL
+We Are Never Ever Getting Back Together (Taylor's Version),Red (Taylor's Version),0.716,0.686,ACTUAL
+Stay Stay Stay (Taylor's Version),Red (Taylor's Version),0.663,0.681,ACTUAL
+The Last Time (Taylor's Version),Red (Taylor's Version),0.155,0.534,ACTUAL
+Holy Ground (Taylor's Version),Red (Taylor's Version),0.511,0.809,ACTUAL
+Sad Beautiful Tragic (Taylor's Version),Red (Taylor's Version),0.232,0.406,ACTUAL
+The Lucky One (Taylor's Version),Red (Taylor's Version),0.538,0.571,ACTUAL
+Everything Has Changed (Taylor's Version),Red (Taylor's Version),0.474,0.61,ACTUAL
+Starlight (Taylor's Version),Red (Taylor's Version),0.605,0.685,ACTUAL
+Begin Again (Taylor's Version),Red (Taylor's Version),0.267,0.527,ACTUAL
+The Moment I Knew (Taylor's Version),Red (Taylor's Version),0.208,0.402,ACTUAL
+Come Back...Be Here (Taylor's Version),Red (Taylor's Version),0.399,0.632,ACTUAL
+Girl At Home (Taylor's Version),Red (Taylor's Version),0.612,0.736,ACTUAL
+State Of Grace (Acoustic Version) [Taylor's Version],Red (Taylor's Version),0.101,0.131,ACTUAL
+Ronan (Taylor's Version),Red (Taylor's Version),0.38,0.279,ACTUAL
+Better Man (Taylor's Version) [From The Vault],Red (Taylor's Version),0.255,0.579,ACTUAL
+Nothing New (Taylor's Version) [From The Vault],Red (Taylor's Version),0.446,0.377,ACTUAL
+Babe (Taylor's Version) [From The Vault],Red (Taylor's Version),0.746,0.743,ACTUAL
+Message In A Bottle (Taylor's Version) [From The Vault],Red (Taylor's Version),0.494,0.791,ACTUAL
+I Bet You Think About Me (Taylor's Version) [From The Vault],Red (Taylor's Version),0.473,0.715,ACTUAL
+Forever Winter (Taylor's Version) [From The Vault],Red (Taylor's Version),0.41,0.552,ACTUAL
+Run (Taylor's Version) [From The Vault],Red (Taylor's Version),0.443,0.488,ACTUAL
+The Very First Night (Taylor's Version) [From The Vault],Red (Taylor's Version),0.581,0.733,ACTUAL
+All Too Well (10 Minute Version) [Taylor's Version] [From The Vault],Red (Taylor's Version),0.205,0.518,ACTUAL
+Welcome To New York,1989,0.658,0.634,ACTUAL
+Blank Space,1989,0.57,0.703,ACTUAL
+Style,1989,0.487,0.791,ACTUAL
+Out Of The Woods,1989,0.338,0.841,ACTUAL
+All You Had To Do Was Stay,1989,0.539,0.725,ACTUAL
+Shake It Off,1989,0.942,0.8,ACTUAL
+I Wish You Would,1989,0.513,0.893,ACTUAL
+Bad Blood,1989,0.287,0.794,ACTUAL
+Wildest Dreams,1989,0.465,0.688,ACTUAL
+How You Get The Girl,1989,0.545,0.656,ACTUAL
+This Love,1989,0.107,0.435,ACTUAL
+I Know Places,1989,0.495,0.755,ACTUAL
+Clean,1989,0.211,0.377,ACTUAL
+Wonderland,1989,0.197,0.692,ACTUAL
+You Are In Love,1989,0.319,0.48,ACTUAL
+New Romantics,1989,0.584,0.889,ACTUAL
+...Ready For It?,reputation,0.417,0.764,ACTUAL
+End Game,reputation,0.151,0.589,ACTUAL
+I Did Something Bad,reputation,0.305,0.602,ACTUAL
+Don't Blame Me,reputation,0.193,0.534,ACTUAL
+Delicate,reputation,0.0499,0.404,ACTUAL
+Look What You Made Me Do,reputation,0.506,0.709,ACTUAL
+So It Goes...,reputation,0.374,0.61,ACTUAL
+Gorgeous,reputation,0.451,0.535,ACTUAL
+Getaway Car,reputation,0.351,0.689,ACTUAL
+King Of My Heart,reputation,0.314,0.703,ACTUAL
+Dancing With Our Hands Tied,reputation,0.284,0.691,ACTUAL
+Dress,reputation,0.0851,0.469,ACTUAL
+This Is Why We Can't Have Nice Things,reputation,0.438,0.789,ACTUAL
+Call It What You Want,reputation,0.252,0.504,ACTUAL
+New Year's Day,reputation,0.23,0.151,ACTUAL
+I Forgot That You Existed,Lover,0.541,0.316,ACTUAL
+Cruel Summer,Lover,0.564,0.702,ACTUAL
+Lover,Lover,0.453,0.543,ACTUAL
+The Man,Lover,0.633,0.658,ACTUAL
+The Archer,Lover,0.166,0.574,ACTUAL
+I Think He Knows,Lover,0.416,0.366,ACTUAL
+Miss Americana & The Heartbreak Prince,Lover,0.487,0.747,ACTUAL
+Paper Rings,Lover,0.865,0.719,ACTUAL
+Cornelia Street,Lover,0.248,0.624,ACTUAL
+Death By A Thousand Cuts,Lover,0.313,0.732,ACTUAL
+London Boy,Lover,0.557,0.71,ACTUAL
+Soon You'll Get Better,Lover,0.421,0.182,ACTUAL
+False God,Lover,0.351,0.32,ACTUAL
+You Need To Calm Down,Lover,0.714,0.671,ACTUAL
+Afterglow,Lover,0.399,0.449,ACTUAL
+ME!,Lover,0.728,0.83,ACTUAL
+It's Nice To Have A Friend,Lover,0.545,0.175,ACTUAL
+Daylight,Lover,0.265,0.496,ACTUAL
+the 1,folklore,0.163,0.361,ACTUAL
+cardigan,folklore,0.534,0.58,ACTUAL
+the last great american dynasty,folklore,0.701,0.653,ACTUAL
+exile,folklore,0.16,0.374,ACTUAL
+my tears ricochet,folklore,0.112,0.265,ACTUAL
+mirrorball,folklore,0.347,0.417,ACTUAL
+seven,folklore,0.374,0.494,ACTUAL
+august,folklore,0.42,0.634,ACTUAL
+this is me trying,folklore,0.408,0.478,ACTUAL
+illicit affairs,folklore,0.44,0.304,ACTUAL
+invisible string,folklore,0.454,0.459,ACTUAL
+mad woman,folklore,0.451,0.7,ACTUAL
+epiphany,folklore,0.103,0.254,ACTUAL
+betty,folklore,0.476,0.376,ACTUAL
+peace,folklore,0.328,0.284,ACTUAL
+hoax,folklore,0.404,0.178,ACTUAL
+the lakes,folklore,0.268,0.258,ACTUAL
+willow,evermore,0.529,0.574,ACTUAL
+champagne problems,evermore,0.32,0.24,ACTUAL
+gold rush,evermore,0.353,0.462,ACTUAL
+'tis the damn season,evermore,0.348,0.434,ACTUAL
+tolerate it,evermore,0.221,0.361,ACTUAL
+"no body, no crime",evermore,0.535,0.613,ACTUAL
+happiness,evermore,0.211,0.334,ACTUAL
+dorothea,evermore,0.354,0.488,ACTUAL
+coney island,evermore,0.292,0.537,ACTUAL
+ivy,evermore,0.535,0.545,ACTUAL
+cowboy like me,evermore,0.511,0.517,ACTUAL
+long story short,evermore,0.573,0.73,ACTUAL
+marjorie,evermore,0.287,0.561,ACTUAL
+closure,evermore,0.92,0.704,ACTUAL
+evermore,evermore,0.32,0.27,ACTUAL
+right where you left me,evermore,0.645,0.619,ACTUAL
+it's time to go,evermore,0.416,0.41,ACTUAL
+Lavender Haze,Midnights,0.0984,0.444,ACTUAL
+Maroon,Midnights,0.0382,0.378,ACTUAL
+Anti-Hero,Midnights,0.519,0.634,ACTUAL
+Snow On The Beach,Midnights,0.154,0.323,ACTUAL
+"You're On Your Own, Kid",Midnights,0.376,0.38,ACTUAL
+Midnight Rain,Midnights,0.23,0.377,ACTUAL
+Question...?,Midnights,0.112,0.502,ACTUAL
+Vigilante Shit,Midnights,0.16,0.279,ACTUAL
+Bejeweled,Midnights,0.412,0.55,ACTUAL
+Labyrinth,Midnights,0.141,0.313,ACTUAL
+Karma,Midnights,0.106,0.622,ACTUAL
+Sweet Nothing,Midnights,0.396,0.161,ACTUAL
+Mastermind,Midnights,0.13,0.352,ACTUAL
+The Great War,Midnights,0.554,0.741,ACTUAL
+Bigger Than The Whole Sky,Midnights,0.068,0.235,ACTUAL
+Paris,Midnights,0.345,0.509,ACTUAL
+High Infidelity,Midnights,0.755,0.529,ACTUAL
+Glitch,Midnights,0.347,0.466,ACTUAL
+"Would've, Could've, Should've",Midnights,0.55,0.84,ACTUAL
+Dear Reader,Midnights,0.159,0.388,ACTUAL
+Mine (Taylor’s Version),Speak Now (Taylor's Version),0.4357549548149109,0.6923615336418152,PREDICTED
+Sparks Fly (Taylor’s Version),Speak Now (Taylor's Version),0.4688548147678375,0.6647616028785706,PREDICTED
+Back To December (Taylor’s Version),Speak Now (Taylor's Version),0.40970343351364136,0.613867461681366,PREDICTED
+Speak Now (Taylor’s Version),Speak Now (Taylor's Version),0.5492812395095825,0.6109179854393005,PREDICTED
+Dear John (Taylor’s Version),Speak Now (Taylor's Version),0.34209752082824707,0.5401514768600464,PREDICTED
+Mean (Taylor’s Version),Speak Now (Taylor's Version),0.5153095126152039,0.6620820760726929,PREDICTED
+The Story Of Us (Taylor’s Version),Speak Now (Taylor's Version),0.44774329662323,0.501213788986206,PREDICTED
+Never Grow Up (Taylor’s Version),Speak Now (Taylor's Version),0.5251448750495911,0.5308467149734497,PREDICTED
+Enchanted (Taylor’s Version),Speak Now (Taylor's Version),0.35418739914894104,0.6290022134780884,PREDICTED
+Better Than Revenge (Taylor’s Version),Speak Now (Taylor's Version),0.5374895334243774,0.8113138675689697,PREDICTED
+Innocent (Taylor’s Version),Speak Now (Taylor's Version),0.2732524573802948,0.5421326160430908,PREDICTED
+Haunted (Taylor’s Version),Speak Now (Taylor's Version),0.3164677321910858,0.8815641403198242,PREDICTED
+Last Kiss (Taylor’s Version),Speak Now (Taylor's Version),0.3138276934623718,0.43212971091270447,PREDICTED
+Long Live (Taylor’s Version),Speak Now (Taylor's Version),0.29829293489456177,0.3643118441104889,PREDICTED
+Ours (Taylor’s Version),Speak Now (Taylor's Version),0.2802494168281555,0.5486024618148804,PREDICTED
+Superman (Taylor’s Version),Speak Now (Taylor's Version),0.48626643419265747,0.6520938277244568,PREDICTED
+Electric Touch (Taylor’s Version) [From the Vault],Speak Now (Taylor's Version),0.4283180236816406,0.6451125741004944,PREDICTED
+When Emma Falls in Love (Taylor’s Version) [From the Vault],Speak Now (Taylor's Version),0.5391153693199158,0.698310136795044,PREDICTED
+I Can See You (Taylor’s Version) [From The Vault],Speak Now (Taylor's Version),0.5124603509902954,0.4065922796726227,PREDICTED
+Castles Crumbling (Taylor’s Version) [From The Vault],Speak Now (Taylor's Version),0.30882528424263,0.528267502784729,PREDICTED
+Foolish One (Taylor’s Version) [From The Vault],Speak Now (Taylor's Version),0.44568172097206116,0.6216030120849609,PREDICTED
+Timeless (Taylor’s Version) [From The Vault],Speak Now (Taylor's Version),0.3227854073047638,0.7927669882774353,PREDICTED
+Speak Now (Taylor’s Version) [Prologue],Speak Now (Taylor's Version),0.4935784637928009,0.7770319581031799,PREDICTED
+Welcome To New York (Taylor’s Version),1989 (Taylor's Version),0.4337122440338135,0.6737543940544128,PREDICTED
+Blank Space (Taylor’s Version),1989 (Taylor's Version),0.6024701595306396,0.8212408423423767,PREDICTED
+Style (Taylor’s Version),1989 (Taylor's Version),0.4015803039073944,0.6343801617622375,PREDICTED
+Out Of The Woods (Taylor’s Version),1989 (Taylor's Version),0.3719123303890228,0.8101186752319336,PREDICTED
+All You Had To Do Was Stay (Taylor’s Version),1989 (Taylor's Version),0.3844575881958008,0.648708164691925,PREDICTED
+Shake It Off (Taylor’s Version),1989 (Taylor's Version),0.6714544296264648,0.7807871699333191,PREDICTED
+I Wish You Would (Taylor’s Version),1989 (Taylor's Version),0.48097464442253113,0.8619101047515869,PREDICTED
+Bad Blood (Taylor’s Version),1989 (Taylor's Version),0.30280783772468567,0.7778492569923401,PREDICTED
+Wildest Dreams (Taylor’s Version),1989 (Taylor's Version),0.48370325565338135,0.6795915365219116,PREDICTED
+How You Get The Girl (Taylor’s Version),1989 (Taylor's Version),0.34614619612693787,0.6311714053153992,PREDICTED
+This Love (Taylor’s Version),1989 (Taylor's Version),0.3971954584121704,0.48951348662376404,PREDICTED
+I Know Places (Taylor’s Version),1989 (Taylor's Version),0.4026794731616974,0.4867439866065979,PREDICTED
+Clean (Taylor’s Version),1989 (Taylor's Version),0.2709786891937256,0.4684070348739624,PREDICTED
+Wonderland (Taylor’s Version),1989 (Taylor's Version),0.4072004556655884,0.6897633671760559,PREDICTED
+You Are In Love (Taylor’s Version),1989 (Taylor's Version),0.4619748890399933,0.5930613875389099,PREDICTED
+New Romantics (Taylor’s Version),1989 (Taylor's Version),0.5272555351257324,0.7337566018104553,PREDICTED
+“Slut!” (Taylor’s Version) [From the Vault],1989 (Taylor's Version),0.47343069314956665,0.6010624170303345,PREDICTED
+Say Don’t Go (Taylor’s Version) [From the Vault],1989 (Taylor's Version),0.4741423428058624,0.6294723749160767,PREDICTED
+Now That We Don’t Talk (Taylor’s Version) [From the Vault],1989 (Taylor's Version),0.32639139890670776,0.37761446833610535,PREDICTED
+Suburban Legends (Taylor’s Version) [From the Vault],1989 (Taylor's Version),0.31333020329475403,0.5234426259994507,PREDICTED
+Is It Over Now? (Taylor’s Version) [From the Vault],1989 (Taylor's Version),0.4337034225463867,0.3654947876930237,PREDICTED
+1989 (Taylor’s Version) [Prologue],1989 (Taylor's Version),0.4060807228088379,0.7958939671516418,PREDICTED
+Fortnight,The Tortured Poets Department,0.2915229797363281,0.5308519005775452,PREDICTED
+The Tortured Poets Department,The Tortured Poets Department,0.41924768686294556,0.6350566744804382,PREDICTED
+My Boy Only Breaks His Favorite Toys,The Tortured Poets Department,0.30727487802505493,0.47852984070777893,PREDICTED
+Down Bad,The Tortured Poets Department,0.69013911485672,0.631171464920044,PREDICTED
+"So Long, London",The Tortured Poets Department,0.4074721932411194,0.5873165726661682,PREDICTED
+But Daddy I Love Him,The Tortured Poets Department,0.4982168972492218,0.8380089402198792,PREDICTED
+Fresh Out The Slammer,The Tortured Poets Department,0.3839016556739807,0.38197559118270874,PREDICTED
+Florida!!!,The Tortured Poets Department,0.5896875858306885,0.6207995414733887,PREDICTED
+Guilty as Sin?,The Tortured Poets Department,0.44935956597328186,0.48220402002334595,PREDICTED
+Who’s Afraid of Little Old Me?,The Tortured Poets Department,0.5236585140228271,0.6305666565895081,PREDICTED
+I Can Fix Him (No Really I Can),The Tortured Poets Department,0.43006613850593567,0.20126666128635406,PREDICTED
+loml,The Tortured Poets Department,0.4082115590572357,0.5328767895698547,PREDICTED
+I Can Do It With a Broken Heart,The Tortured Poets Department,0.5052884817123413,0.6384372711181641,PREDICTED
+The Smallest Man Who Ever Lived,The Tortured Poets Department,0.3202633857727051,0.3590531051158905,PREDICTED
+The Alchemy,The Tortured Poets Department,0.514499306678772,0.6435641646385193,PREDICTED
+Clara Bow,The Tortured Poets Department,0.2673858106136322,0.36641451716423035,PREDICTED
+Fortnight,The Tortured Poets Department: The Anthology,0.2915229797363281,0.5308519005775452,PREDICTED
+The Tortured Poets Department,The Tortured Poets Department: The Anthology,0.41924768686294556,0.6350566744804382,PREDICTED
+My Boy Only Breaks His Favorite Toys,The Tortured Poets Department: The Anthology,0.30727487802505493,0.47852984070777893,PREDICTED
+Down Bad,The Tortured Poets Department: The Anthology,0.69013911485672,0.631171464920044,PREDICTED
+"So Long, London",The Tortured Poets Department: The Anthology,0.4074721932411194,0.5873165726661682,PREDICTED
+But Daddy I Love Him,The Tortured Poets Department: The Anthology,0.4982168972492218,0.8380089402198792,PREDICTED
+Fresh Out The Slammer,The Tortured Poets Department: The Anthology,0.3839016556739807,0.38197559118270874,PREDICTED
+Florida!!!,The Tortured Poets Department: The Anthology,0.5896875858306885,0.6207995414733887,PREDICTED
+Guilty as Sin?,The Tortured Poets Department: The Anthology,0.44935956597328186,0.48220402002334595,PREDICTED
+Who’s Afraid of Little Old Me?,The Tortured Poets Department: The Anthology,0.5236585140228271,0.6305666565895081,PREDICTED
+I Can Fix Him (No Really I Can),The Tortured Poets Department: The Anthology,0.43006613850593567,0.20126666128635406,PREDICTED
+loml,The Tortured Poets Department: The Anthology,0.4082115590572357,0.5328767895698547,PREDICTED
+I Can Do It With a Broken Heart,The Tortured Poets Department: The Anthology,0.5052884817123413,0.6384372711181641,PREDICTED
+The Smallest Man Who Ever Lived,The Tortured Poets Department: The Anthology,0.3202633857727051,0.3590531051158905,PREDICTED
+The Alchemy,The Tortured Poets Department: The Anthology,0.514499306678772,0.6435641646385193,PREDICTED
+Clara Bow,The Tortured Poets Department: The Anthology,0.2673858106136322,0.36641451716423035,PREDICTED
+The Black Dog,The Tortured Poets Department: The Anthology,0.29570379853248596,0.40728238224983215,PREDICTED
+imgonnagetyouback,The Tortured Poets Department: The Anthology,0.4037257730960846,0.6662858128547668,PREDICTED
+The Albatross,The Tortured Poets Department: The Anthology,0.6195854544639587,0.37881219387054443,PREDICTED
+Chloe or Sam or Sophia or Marcus,The Tortured Poets Department: The Anthology,0.3354755938053131,0.3818037509918213,PREDICTED
+How Did It End?,The Tortured Poets Department: The Anthology,0.3228287696838379,0.4019632637500763,PREDICTED
+So High School,The Tortured Poets Department: The Anthology,0.43073770403862,0.6637614965438843,PREDICTED
+I Hate It Here,The Tortured Poets Department: The Anthology,0.45779791474342346,0.5811750888824463,PREDICTED
+thanK you aIMee,The Tortured Poets Department: The Anthology,0.5113226175308228,0.6282869577407837,PREDICTED
+I Look in People’s Windows,The Tortured Poets Department: The Anthology,0.3680249750614166,0.39768415689468384,PREDICTED
+The Prophecy,The Tortured Poets Department: The Anthology,0.41756054759025574,0.6463919281959534,PREDICTED
+Cassandra,The Tortured Poets Department: The Anthology,0.5488600730895996,0.5259988903999329,PREDICTED
+Peter,The Tortured Poets Department: The Anthology,0.4764277935028076,0.5992708802223206,PREDICTED
+The Bolter,The Tortured Poets Department: The Anthology,0.5047940611839294,0.7215827703475952,PREDICTED
+Robin,The Tortured Poets Department: The Anthology,0.3680249750614166,0.29453012347221375,PREDICTED
+The Manuscript,The Tortured Poets Department: The Anthology,0.3925038278102875,0.30250003933906555,PREDICTED
+The Fate of Ophelia,The Life of a Showgirl,0.2960759103298187,0.6671680212020874,PREDICTED
+Elizabeth Taylor,The Life of a Showgirl,0.43938013911247253,0.6475750207901001,PREDICTED
+Opalite,The Life of a Showgirl,0.45344316959381104,0.7010372877120972,PREDICTED
+Father Figure,The Life of a Showgirl,0.5212967395782471,0.6224038004875183,PREDICTED
+Eldest Daughter,The Life of a Showgirl,0.36523371934890747,0.630964994430542,PREDICTED
+Ruin The Friendship,The Life of a Showgirl,0.2941296100616455,0.6139240264892578,PREDICTED
+Actually Romantic,The Life of a Showgirl,0.2904475927352905,0.6115211844444275,PREDICTED
+Wi$h Li$t,The Life of a Showgirl,0.5461543798446655,0.6644048094749451,PREDICTED
+Wood,The Life of a Showgirl,0.28019770979881287,0.49463799595832825,PREDICTED
+CANCELLED!,The Life of a Showgirl,0.5954871773719788,0.7031053900718689,PREDICTED
+Honey,The Life of a Showgirl,0.32460442185401917,0.6403911113739014,PREDICTED
+The Life of a Showgirl,The Life of a Showgirl,0.37155845761299133,0.8176724314689636,PREDICTED
