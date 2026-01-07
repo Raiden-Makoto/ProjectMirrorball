@@ -76,18 +76,20 @@ def init_lyrics_table() -> None:
 # --- UTILITIES ---
 def clean_lyrics(text: Optional[str]) -> Optional[str]:
     """
-    Clean lyrics text by removing Genius-specific metadata and tags.
+    Clean lyrics text by removing Genius-specific metadata while preserving structure.
 
     Removes:
     - Metadata lines like "176 Contributors", "Lyrics"
-    - Verse/Chorus tags like [Verse 1], [Chorus], [Bridge]
     - Embed suffixes like "21Embed" at the end
+
+    Preserves:
+    - Section tags like [Verse 1], [Chorus], [Bridge] (needed for bridge analysis)
 
     Args:
         text: Raw lyrics text from Genius API
 
     Returns:
-        Cleaned lyrics text, or None if input is None/empty
+        Cleaned lyrics text with section tags preserved, or None if input is None/empty
     """
     if not text:
         return None
@@ -95,8 +97,8 @@ def clean_lyrics(text: Optional[str]) -> Optional[str]:
     # Remove metadata lines like "176 Contributors", "Lyrics", etc.
     text = re.sub(r".*?Lyrics", "", text, count=1)
 
-    # Remove [Verse 1], [Chorus], etc.
-    text = re.sub(r"\[.*?\]", "", text)
+    # NOTE: We intentionally KEEP [Verse], [Chorus], [Bridge] tags
+    # because they are needed for bridge impact analysis in bridge_impact.py
 
     # Remove the 'Embed' at the end of Genius lyrics (e.g., "21Embed")
     text = re.sub(r"[0-9]*Embed$", "", text)
@@ -132,15 +134,36 @@ def scrape_song_lyrics(
     """
     conn = duckdb.connect(DB_PATH)
 
-    # CHECKPOINT: Skip if already scraped
-    exists = conn.execute(
-        "SELECT 1 FROM dim_lyrics WHERE track_name = ? AND album_name = ?",
+    # CHECKPOINT: Skip if already scraped AND has section tags
+    existing = conn.execute(
+        "SELECT lyrics FROM dim_lyrics WHERE track_name = ? AND album_name = ?",
         [track_name, album_name],
     ).fetchone()
 
-    if exists:
-        conn.close()
-        return f"Skipped: {track_name}"
+    if existing:
+        lyrics = existing[0]
+        # Check if lyrics have section tags (needed for bridge analysis)
+        has_tags = (
+            lyrics
+            and (
+                "[Verse" in lyrics
+                or "[Chorus" in lyrics
+                or "[Bridge" in lyrics
+                or "[Intro" in lyrics
+                or "[Outro" in lyrics
+            )
+        )
+        if has_tags:
+            conn.close()
+            return f"Skipped: {track_name} (has tags)"
+        else:
+            # Re-scrape if missing tags
+            conn.execute(
+                "DELETE FROM dim_lyrics WHERE track_name = ? AND album_name = ?",
+                [track_name, album_name],
+            )
+            conn.close()
+            # Continue to scrape below
 
     try:
         # Search for the song
