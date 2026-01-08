@@ -88,4 +88,38 @@ Post-2020, there is a measurable "Lexical Climb." Both folklore (1.76) and Midni
 
 *Note: The presence of negative reading grades (Min: -0.45) indicates maximal phonetic simplicity. These scores represent tracks where lyrical density is sacrificed for rhythmic repetition.*
 
-## S1.3: Thematic DNA Indeitification via TF-IDF
+## S1.3: Thematic DNA Identification via TF-IDF
+
+This module uses Term Frequency-Inverse Document Frequency (TF-IDF) to identify the "signature words" that define each track's unique lyrical identity. By weighting words that appear frequently in a specific song but rarely across Taylor Swift's entire discography, we can mathematically isolate the core themes and imagery of each track.
+
+### Methodology
+
+The `thematic_dna.py` script:
+1. **Deep Cleaning Layer**: Pre-processes lyrics to remove metadata noise:
+   - Removes bracket content `[Verse: Artist Name]` or `[Artist Name]` via regex
+   - Removes specific artist names (Post Malone, Taylor Swift, Jack Antonoff, Florence + The Machine) that appear as Genius artifacts
+2. **Data Sanitization Layer**: 
+   - Dynamically extracts metadata words from track and album names (e.g., "Malone", "Taylor", "Version") to exclude from analysis
+   - Explicitly blacklists specific words: "post", "malone", "florence", "machine", "antonoff", "dessner", "taylor", "swift", "version"
+   - Filters out common Genius noise words ("lyrics", "embed", "contributors") and fragments ("ve", "ll", "re", "nt")
+   - Combines with standard English stop words and interjections
+3. **TF-IDF Vectorization**: Uses a minimum token length of 3 letters, single-word ngrams only, and a maximum of 2,000 features to ensure meaningful results.
+4. **Signature Extraction**: Identifies the top 5 words with the highest TF-IDF scores for each track.
+
+### Sample Results (Signature Words)
+
+| Track Name | Album | Thematic DNA (Top Keywords) |
+| :--- | :--- | :--- |
+| **Tim McGraw** | Taylor Swift | hope, blue, chest, faded, jeans |
+| **Love Story** | Fearless | romeo, juliet, yes, waiting, princess |
+| **All Too Well** | Red | remember, bout, scarf, cause, maybe |
+| **Blank Space** | 1989 | insane, lovers, list, nasty, scar |
+| **Look What You Made Me Do** | reputation | look, starrin, trusts, check, just |
+| **Cruel Summer** | Lover | woah, roll, breakable, shape, rules |
+| **cardigan** | folklore | assume, young, felt, bed, line |
+| **willow** | evermore | wreck, begging, plans, stray, hand |
+| **Anti-Hero** | Midnights | problem, agrees, everybody, teatime, rooting |
+| **Fortnight** | TTPD | touched, ruining, neighbors, kill, america |
+| **Florida!!!** | TTPD | drug, hell, use, fuck, shitstorm |
+
+This analysis allows us to see the "DNA" of her songwriting evolve from the literal imagery of her debut ("Tim McGraw": "blue", "chest", "faded", "jeans") to the high-concept imagery of her later work ("Anti-Hero": "teatime", "rooting", "exhausting"). The cleaning layer ensures that metadata noise (like artist names in features) doesn't contaminate the thematic signatures—notice how "Fortnight" (featuring Post Malone) and "Florida!!!" (featuring Florence Welch) no longer include artist names in their DNA.
