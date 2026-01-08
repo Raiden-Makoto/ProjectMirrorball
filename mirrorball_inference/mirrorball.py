@@ -4,6 +4,7 @@ import pandas as pd # type: ignore
 import numpy as np # type: ignore
 import umap # type: ignore
 import shap # type: ignore
+import xgboost as xgb # type: ignore
 from sklearn.preprocessing import StandardScaler # type: ignore
 from sklearn.cluster import KMeans # type: ignore
 
@@ -14,44 +15,64 @@ DB_PATH = os.path.join(PROJECT_ROOT, "mirrorball.db")
 
 def mirrorball_inference() -> None:
     conn = duckdb.connect(DB_PATH) # type: ignore
-    df = conn.execute("SELECT * FROM final_map_data").df()
     
-    # 1. Prepare Features
-    features = ['energy', 'valence', 'reading_grade', 'syllable_density', 'lexical_diversity', 'bridge_shift']
-    x = df[features].values
+    # 1. UNIFY DATA (Join all your engineered features)
+    df = conn.execute("""
+        SELECT 
+            l.track_name, l.album_name, 
+            m.energy, m.valence,
+            lx.reading_grade, lx.syllable_density, lx.lexical_diversity,
+            COALESCE(b.bridge_sentiment_shift, 0) as bridge_shift,
+            m.thematic_dna
+        FROM dim_lyrics l
+        LEFT JOIN master_training_data m ON l.track_name = m.track_name AND l.album_name = m.album_name
+        LEFT JOIN dim_lexical_metrics lx ON l.track_name = lx.track_name AND l.album_name = lx.album_name
+        LEFT JOIN dim_bridge_metrics b ON l.track_name = b.track_name AND l.album_name = b.album_name
+    """).df()
+
+    features = ['reading_grade', 'syllable_density', 'lexical_diversity', 'bridge_shift']
     
-    # Scale data for the model (SHAP needs the same input as the model)
+    # 2. XGBOOST INFERENCE (Fill the 102 missing tracks using your Optuna params)
+    labeled = df[df['energy'].notnull()]
+    unlabeled = df[df['energy'].isnull()]
+    
+    best_params = {
+        "energy": {"n_estimators": 53, "max_depth": 7, "learning_rate": 0.025},
+        "valence": {"n_estimators": 53, "max_depth": 7, "learning_rate": 0.025}
+    }
+
+    for target in ['energy', 'valence']:
+        # Track which rows will be predicted BEFORE filling them
+        df[f'{target}_is_predicted'] = df[target].isnull()
+        model = xgb.XGBRegressor(**best_params[target], random_state=42)
+        model.fit(labeled[features], labeled[target])
+        df.loc[df[target].isnull(), target] = model.predict(unlabeled[features])
+
+    # 3. K-MEANS & UMAP (The Latent Space)
+    all_features = features + ['energy', 'valence']
     scaler = StandardScaler()
-    x_scaled = scaler.fit_transform(x)
+    x_scaled = scaler.fit_transform(df[all_features])
     
-    # 2. Fit the 'Final' K-Means model
-    # We use n_clusters=5 to represent the 'Sonic Archetypes'
+    # Clustering
     kmeans = KMeans(n_clusters=5, random_state=42, n_init=10)
-    kmeans.fit(x_scaled)
-    df['cluster_id'] = kmeans.labels_
-
-    # 3. THE SHAP MOVE
-    # We use KernelExplainer to explain the cluster assignment
-    # We use a summary of the data as the background to speed it up
-    background = shap.kmeans(x_scaled, 10) 
-    explainer = shap.KernelExplainer(kmeans.predict, background)
-    shap_values = explainer.shap_values(x_scaled)
-
-    # 4. Extract the 'Top Driver' per song
-    # shap_values for a regressor is a list of arrays. We find the feature with max absolute impact.
-    top_drivers = []
-    for i in range(len(df)):
-        # Get absolute impact of each feature for this specific row
-        impacts = np.abs(shap_values[i])
-        top_feature_idx = np.argmax(impacts)
-        top_drivers.append(features[top_feature_idx])
+    df['cluster_id'] = kmeans.fit_predict(x_scaled)
     
-    df['top_driver'] = top_drivers
+    # Dimensionality Reduction
+    reducer = umap.UMAP(n_neighbors=15, min_dist=0.1, random_state=42)
+    embedding = reducer.fit_transform(x_scaled)
+    df['umap_x'], df['umap_y'] = embedding[:, 0], embedding[:, 1]
 
-    # 5. Save back to DuckDB
-    conn.execute("CREATE OR REPLACE TABLE mirrorball_analyzed_data AS SELECT * FROM df")
+    # 4. SHAP (Explain the Clusters)
+    # We explain why the machine put a song in its specific cluster
+    explainer = shap.KernelExplainer(kmeans.predict, shap.kmeans(x_scaled, 10))
+    shap_vals = explainer.shap_values(x_scaled)
     
-    print("\n--- SHAP ANALYSIS COMPLETE ---")
+    # Identify the Top Driver for each song
+    df['top_driver'] = [all_features[np.argmax(np.abs(val))] for val in shap_vals]
+
+    # 5. FINAL EXPORT
+    conn.execute("CREATE OR REPLACE TABLE final_map_data_with_shap AS SELECT * FROM df")
+    print("PROJECT COMPLETED: 333 tracks processed with SHAP and UMAP.")
     print(df[['track_name', 'cluster_id', 'top_driver']].head(10))
     conn.close()
 
