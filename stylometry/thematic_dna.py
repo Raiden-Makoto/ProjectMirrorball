@@ -22,7 +22,9 @@ def thematic_dna_analysis() -> None:
 
     This function:
     1. Loads all lyrics from dim_lyrics table
-    2. Initializes the TF-IDF vectorizer with stop words and section tag filtering
+    2. Initializes the TF-IDF vectorizer with refined filtering:
+       - Custom stop words to filter out fragments ('ve', 'll', 're', 'nt') and interjections
+       - Token pattern requiring minimum 3 letters (no numbers, no fragments)
     3. Extracts the top 5 most characteristic words for each track (highest TF-IDF scores)
     4. Saves the results to dim_thematic_dna table
     5. Updates the master_training_data table with the thematic DNA
@@ -35,11 +37,18 @@ def thematic_dna_analysis() -> None:
     conn = duckdb.connect(DB_PATH)
     df = conn.execute("SELECT track_name, album_name, lyrics FROM dim_lyrics").df()
     
-    # 1. Initialize Vectorizer (Filtering out 'Stop Words' like 'the', 'is', 'yeah')
+    # 1. Custom Stop Words to filter out fragments like 've', 'll', 're', 'nt' and common interjections
     # We also filter out 'Taylor' and 'Swift' as they are metadata
-    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + ['taylor', 'swift', 'chorus', 'verse', 'bridge']
+    custom_stops = ['ve', 'll', 're', 'nt', 'oh', 'yeah', 'ah', 'ooh', 'chorus', 'verse', 'bridge', 'taylor', 'swift']
+    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + custom_stops
     
-    tfidf = TfidfVectorizer(stop_words=stop_words, max_features=2000)
+    # 2. Refined Vectorizer with token pattern to ensure we only get words (minimum 3 letters, no numbers)
+    # This filters out fragments and ensures meaningful words only
+    tfidf = TfidfVectorizer(
+        stop_words=stop_words,
+        token_pattern=r'(?u)\b[a-zA-Z]{3,}\b',  # Minimum 3 letters, no numbers
+        max_features=2000
+    )
     matrix = tfidf.fit_transform(df['lyrics'].fillna(""))
     features = tfidf.get_feature_names_out()
     
@@ -75,7 +84,11 @@ def thematic_dna_analysis() -> None:
         )
     """)
     
-    print("\nThematic DNA extracted. Your master dataset now has identity.")
+    print("\n--- DNA REFINED: No more 've' fragments ---")
+    # Quick Check
+    check = conn.execute("SELECT track_name, thematic_dna FROM dim_thematic_dna WHERE track_name = 'the 1'").fetchone()
+    if check:
+        print(f"the 1 DNA: {check[1]}")
     conn.close()
 
 if __name__ == "__main__":
