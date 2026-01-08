@@ -15,7 +15,8 @@ import pandas as pd  # type: ignore
 import xgboost as xgb  # type: ignore
 import optuna # type: ignore
 from sklearn.model_selection import train_test_split # type: ignore
-from sklearn.metrics import mean_squared_error # type: ignore
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score # type: ignore
+import numpy as np # type: ignore
 
 # Get the project root directory (one level up from this script)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -52,22 +53,68 @@ def run_tuned_inference() -> None:
     
     # Run Optuna for Energy and Valence
     for target in ['energy', 'valence']:
-        print(f"--- Optimizing {target.upper()} ---")
+        print(f"\n{'='*50}")
+        print(f"Optimizing {target.upper()}")
+        print(f"{'='*50}")
         y_train_full = labeled_df[target]
         
         study = optuna.create_study(direction="minimize")
         study.optimize(lambda trial: objective(trial, X_train_full, y_train_full), n_trials=30)
         
-        # Train final model with best params
+        print(f"\nBest hyperparameters for {target}:")
+        for key, value in study.best_params.items():
+            print(f"  {key}: {value}")
+        print(f"Best validation MSE: {study.best_value:.6f}")
+        
+        # Train final model with best params and evaluate on held-out test set
+        X_train, X_test, y_train, y_test = train_test_split(
+            X_train_full, y_train_full, test_size=0.2, random_state=42
+        )
         best_model = xgb.XGBRegressor(**study.best_params, random_state=42)
-        best_model.fit(X_train_full, y_train_full)
+        best_model.fit(X_train, y_train)
+        
+        # Calculate accuracy metrics on test set
+        test_preds = best_model.predict(X_test)
+        mse = mean_squared_error(y_test, test_preds)
+        rmse = np.sqrt(mse)
+        mae = mean_absolute_error(y_test, test_preds)
+        r2 = r2_score(y_test, test_preds)
+        
+        print(f"\nTest Set Performance ({target}):")
+        print(f"  RMSE: {rmse:.4f}")
+        print(f"  MAE:  {mae:.4f}")
+        print(f"  R²:   {r2:.4f}")
+        
+        # Train on full labeled set for final predictions
+        final_model = xgb.XGBRegressor(**study.best_params, random_state=42)
+        final_model.fit(X_train_full, y_train_full)
         
         # Predict the 102 missing values
-        df.loc[df[target].isnull(), target] = best_model.predict(unlabeled_df[features])
+        predictions = final_model.predict(unlabeled_df[features])
+        df.loc[df[target].isnull(), target] = predictions
+        
+        # Show sample predictions
+        print(f"\nSample Predictions ({target}):")
+        sample_preds = pd.DataFrame({
+            'track_name': unlabeled_df['track_name'].head(5).values,
+            'album_name': unlabeled_df['album_name'].head(5).values,
+            f'predicted_{target}': predictions[:5]
+        })
+        print(sample_preds.to_string(index=False))
 
     # Save back to DB
     conn.execute("CREATE OR REPLACE TABLE mirrorball_ml_final AS SELECT * FROM df")
-    print("102 tracks 'reconstructed' using Tuned XGBoost. Ready for Plotly.")
+    
+    # Final summary
+    print(f"\n{'='*50}")
+    print("SUMMARY")
+    print(f"{'='*50}")
+    total_predicted = len(unlabeled_df)
+    total_tracks = len(df)
+    print(f"✅ Predicted energy and valence for {total_predicted} tracks")
+    print(f"✅ Total tracks in mirrorball_ml_final: {total_tracks}")
+    print(f"✅ All tracks now have energy and valence values")
+    print("✅ Ready for Plotly visualization")
     conn.close()
 
 if __name__ == "__main__":
