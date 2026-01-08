@@ -60,7 +60,7 @@ faiss-cpu==1.10.0
 fastapi==0.116.1
 fastjsonschema==2.21.1
 ffmpy==0.6.1
-filelock==3.18.0
+filelock==3.20.1
 Flask==3.1.0
 flask-cors==6.0.0
 flatbuffers==24.12.23
