@@ -80,4 +80,10 @@ The `lexical_sophistication.py` script:
 | 1989 (Taylor's Version) | 1.19 | -0.11 | 2.75 | 21 |
 | 1989 | 1.07 | -0.12 | 2.65 | 16 |
 
-- Metrics are saved to `dim_lexical_metrics` table and integrated into `master_training_data`
+This table quantifies a notable shift in structural complexity across Taylor Swift's career.
+We can see that her 1989 era represents her most "streamlined" period (Avg Grade: 1.07),
+designed for maximum radio-friendliness and monosyllabic punch.
+
+Post-2020, there is a measurable "Lexical Climb." Both folklore (1.76) and Midnights (1.90) show a return to more complex sentence structures and higher syllable density, confirming the fan-observed shift toward "literary" songwriting through hard data.
+
+## S1.3: Thematic DNA Indeitification via TF-IDF
