@@ -86,4 +86,6 @@ designed for maximum radio-friendliness and monosyllabic punch.
 
 Post-2020, there is a measurable "Lexical Climb." Both folklore (1.76) and Midnights (1.90) show a return to more complex sentence structures and higher syllable density, confirming the fan-observed shift toward "literary" songwriting through hard data.
 
+*Note: The presence of negative reading grades (Min: -0.45) indicates maximal phonetic simplicity. These scores represent tracks where lyrical density is sacrificed for rhythmic repetition.*
+
 ## S1.3: Thematic DNA Indeitification via TF-IDF
