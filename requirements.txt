@@ -268,6 +268,7 @@ tensorflow-macos==2.16.2
 tensorflow-metal==1.2.0
 termcolor==2.5.0
 terminado==0.18.1
+textstat==0.7.12
 threadpoolctl==3.5.0
 tifffile==2025.3.30
 timm==1.0.20
