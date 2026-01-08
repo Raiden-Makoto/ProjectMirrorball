@@ -177,7 +177,7 @@ prefect==3.0.3
 PennyLane==0.40.0
 PennyLane_Lightning==0.40.0
 pexpect==4.9.0
-pillow==11.2.1
+pillow==11.3.0
 playsound==1.3.0
 playwright==1.54.0
 plotly==6.5.0
