@@ -1,5 +1,6 @@
 .env
 .DS_Store
 *.db
+!mirrorball.db
 debug/
 data/cleaning.py
