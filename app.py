@@ -102,7 +102,7 @@ def mirrorball_app():
 
     fig.show()
     fig.write_html("mirrorball_map.html")
-    print("Standalone map saved as mirrorball_map.html")
+    print("Standalone map saved as index.html")
     
     # Export final table as CSV
     df.to_csv("mirrorball.csv", index=False)
