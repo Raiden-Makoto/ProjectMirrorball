@@ -68,7 +68,37 @@ def mirrorball_inference() -> None:
     shap_vals = explainer.shap_values(x_scaled)
     
     # Identify the Top Driver for each song
-    df['top_driver'] = [all_features[np.argmax(np.abs(val))] for val in shap_vals]
+    # SHAP Transparency: Prefer linguistic drivers over energy/valence
+    # (since R² was only 1-10%, energy/valence aren't reliable predictors)
+    linguistic_features = ['reading_grade', 'syllable_density', 'lexical_diversity', 'bridge_shift']
+    audio_features = ['energy', 'valence']
+    
+    top_drivers = []
+    for i, val in enumerate(shap_vals):
+        abs_impacts = np.abs(val)
+        top_idx = np.argmax(abs_impacts)
+        top_feature = all_features[top_idx]
+        
+        # If top driver is energy/valence, check if a linguistic feature has significant impact
+        if top_feature in audio_features:
+            # Find the top linguistic feature
+            linguistic_indices = [all_features.index(f) for f in linguistic_features if f in all_features]
+            if linguistic_indices:
+                linguistic_impacts = abs_impacts[linguistic_indices]
+                top_linguistic_idx = linguistic_indices[np.argmax(linguistic_impacts)]
+                top_linguistic_impact = abs_impacts[top_linguistic_idx]
+                
+                # Use linguistic feature if it's at least 70% of the audio feature's impact
+                if top_linguistic_impact >= 0.7 * abs_impacts[top_idx]:
+                    top_drivers.append(all_features[top_linguistic_idx])
+                else:
+                    top_drivers.append(top_feature)
+            else:
+                top_drivers.append(top_feature)
+        else:
+            top_drivers.append(top_feature)
+    
+    df['top_driver'] = top_drivers
 
     # 5. FINAL EXPORT
     conn.execute("CREATE OR REPLACE TABLE final_map_data_with_shap AS SELECT * FROM df")
